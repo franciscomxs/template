@@ -1,0 +1,23 @@
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post,  class: 'form-signin' }) do |f| %>
+  <h2>Esqueceu a senha?</h2>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, :required => true, :autofocus => true %>
+  </div>
+
+
+  <div class="btn-group dropup">
+    <%= f.button :submit, "Resetar", class: 'btn btn-large btn-primary' %>
+
+    <button class="btn btn-large">Mais</button>
+    <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" style="right: 0; left: auto; z-index:99999;">
+      <%= render "devise/shared/links" %>
+    </ul>
+
+  </div>
+
+<% end %>

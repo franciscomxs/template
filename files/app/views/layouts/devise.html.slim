@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta charset= "utf-8"
+    meta name="description" content=""
+    meta name="author" content="Francisco Martins"
+    meta name="revisit-after" content="3 days"
+    meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"
+    link href="/favicon.ico" rel="shortcut icon"
+    title Admin
+    = stylesheet_link_tag "devise/application", media: "all"
+    = csrf_meta_tags
+  body
+    .container
+      == flash_messages
+      == yield
+    == javascript_include_tag "application"

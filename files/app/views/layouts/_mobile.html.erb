@@ -1,0 +1,10 @@
+<% if mobile_device? %>
+  <script>
+      $(document).ready(function(){
+          $('a').click(function(event){
+              event.preventDefault();
+              window.location.assign($(this).attr('href'));
+          });
+      });
+  </script>
+<% end %>

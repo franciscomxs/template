@@ -1,0 +1,28 @@
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-signin'}) do |f| %>
+  
+  <h2>Entrar</h2>
+
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, :required => false, :autofocus => true %>
+    <%= f.input :password, :required => false %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="btn-group">
+
+        <div class="btn-group dropup">
+          <button class="btn btn-large">Mais</button>
+          <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" style="right: 0; left: auto; z-index:99999;">
+            <%= render "devise/shared/links" %>
+          </ul>
+        </div>
+
+        <%= f.button :submit, 'Entrar', class: 'btn btn-large btn-primary' %>
+
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta charset= "utf-8"
+    meta name="description" content=""
+    meta name="author" content="Francisco Martins"
+    meta name="revisit-after" content="3 days"
+    meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"
+    link href="/favicon.ico" rel="shortcut icon"
+    title Admin
+    == stylesheet_link_tag "public/application", media: "all"
+    == csrf_meta_tags
+    == render 'layouts/analytics'
+
+    /[if lt IE 9]
+      script src= "http://html5shim.googlecode.com/svn/trunk/html5.js"
+
+  body id==controller.controller_name
+    #wrap
+      header
+        == render 'layouts/public/navbar'
+        .container-fluid
+          == link_to 'home', root_path
+          == yield :header
+
+      .container-fluid
+        = flash_messages
+
+      .container-fluid
+        section role="main" id="main"
+          = yield
+
+        - if content_for?(:sidebar)
+          aside
+            == yield(:sidebar)
+      hr
+      footer
+        .container-fluid
+          p= "&copy; #{Time.zone.now.year}".html_safe
+
+    == javascript_include_tag "application"
+    == render 'layouts/mobile'
+    == render 'layouts/analytics' unless Rails.env.development?

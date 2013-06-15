@@ -1,0 +1,8 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      ul.nav
+        = active_link_to bootstrap_icon('home'), root_path, wrap_tag: :li
+        li.divider-vertical
+          = active_link_to t('dashboard'), admin_root_path, wrap_tag: :li
+          = active_link_to t('logout'), destroy_user_session_path, method: :delete, confirm: 'Are you sure?', wrap_tag: :li

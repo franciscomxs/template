@@ -15,7 +15,7 @@ generators = <<GENERATORS
       g.assets false
       g.stylesheets false
       g.integration_tool false
-      g.template_engine :haml
+      g.template_engine :slim
     end
 
     config.assets.initialize_on_precompile = false

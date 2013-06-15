@@ -1,0 +1,28 @@
+@media only screen 
+and (min-width: 980px)
+{
+  body{
+    padding-top:60px !important;
+  }
+}
+
+@media only screen 
+and (min-width: 767px)
+and (max-width : 978px)
+{
+  .navbar{
+    margin:0 0 1em 0!important;
+  }
+}
+
+@media only screen 
+and (max-width : 767px) {
+  .span1, .span2, .span3, .span4, .span5, .span6
+  {
+    li{
+      display: inline-block !important;
+      width: 22% !important;
+      margin: 0 0 3% 3% !important;
+    }
+  }
+}

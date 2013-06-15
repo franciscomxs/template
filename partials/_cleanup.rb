@@ -9,3 +9,5 @@ inside "public" do
   remove_file "favicon.ico"
   remove_file "robots.txt"
 end
+
+copy_static_file '.gitignore'

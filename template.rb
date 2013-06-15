@@ -20,10 +20,13 @@ def apply_partial(partial)
 end
 
 apply_partial :cleanup
-apply_partial :default
 apply_partial :generators
+apply_partial :default
 apply_partial :assets
+
 apply_partial :gems
+apply_partial :devise
+
 apply_partial :rspec
 apply_partial :seeds
 apply_partial :finish

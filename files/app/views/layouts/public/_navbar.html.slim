@@ -1,0 +1,7 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      ul.nav
+        = active_link_to bootstrap_icon('home'), root_path, wrap_tag: :li
+        li.divider-vertical
+        = active_link_to t('home'), '#', wrap_tag: :li
